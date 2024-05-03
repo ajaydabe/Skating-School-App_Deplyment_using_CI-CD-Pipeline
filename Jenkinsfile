@@ -6,17 +6,17 @@ pipeline {
     stages {
         stage('Deploy') {
             steps {
-                sh 'sudo -S kubectl apply -f deploy.yaml'
+                sh 'kubectl apply -f deploy.yaml'
             }
         }
         stage('Service') {
             steps {
-                sh 'sudo -S kubectl apply -f svc.yaml'
+                sh 'kubectl apply -f svc.yaml'
             }
         }
         stage('Ingress') {
             steps {
-                sh 'sudo -S kubectl apply -f ingress.yaml'
+                sh 'kubectl apply -f ingress.yaml'
             }
         }
     }
