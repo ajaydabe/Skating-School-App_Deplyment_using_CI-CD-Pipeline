@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eduapp-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: eduapp
+  template:
+    metadata:
+      labels:
+        app: eduapp
+    spec:
+      containers:
+        - name: eduapp-container
+          image: ajaydabe/edu.app:v3
+          ports:
+            - containerPort: 80
